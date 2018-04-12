@@ -1,0 +1,4 @@
+out/*
+build/*
+allure-report/*
+tools/*.dt
