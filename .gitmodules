@@ -4,3 +4,6 @@
 [submodule "tools/xUnitFor1C"]
 	path = tools/xUnitFor1C
 	url = https://github.com/xDrivenDevelopment/xUnitFor1C.git
+[submodule "vanessa_bit_libs"]
+	path = vanessa_bit_libs
+	url = https://efremov@code.bit-erp.ru/scm/tool/vanessa_bit_libs.git
