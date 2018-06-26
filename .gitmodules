@@ -1,9 +1,13 @@
 [submodule "tools/vanessa-behavior"]
 	path = tools/vanessa-behavior
-	url = https://github.com/silverbulleters/vanessa-behavior.git
+	url = https://code.bit-erp.ru/scm/~pengel/vanessa-vehavior.git
 [submodule "tools/xUnitFor1C"]
 	path = tools/xUnitFor1C
 	url = https://github.com/xDrivenDevelopment/xUnitFor1C.git
 [submodule "features/bit_libs"]
 	path = features/bit_libs
 	url = https://code.bit-erp.ru/scm/tool/vanessa_bit_libs.git
+[submodule "tools/cikulix"]
+	path = tools/cikulix
+	url = https://code.bit-erp.ru/scm/~pengel/cikulix.git
+	branch = master
