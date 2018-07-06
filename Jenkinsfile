@@ -5,7 +5,7 @@ def firstInitFail = false
 
 pipeline {
     agent {
-        label "newbdd"
+        label "debug"
     }
     options {
         buildDiscarder(logRotator(numToKeepStr:'10'))
