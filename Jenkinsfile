@@ -17,7 +17,7 @@ pipeline {
                 script {
                     if (!firstInitFail) {
                         timestamps {
-                            cmd("runner vanessa --settings tools\vrunner.json")
+                            cmd("runner vanessa --settings E:\\jenkins\\workspace\\tools\\vrunner.json")
                         }
                     }
                 }
