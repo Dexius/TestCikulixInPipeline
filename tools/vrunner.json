@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/vanessa-runner-schema.json",
+    "default": {
+        "--ibconnection": "/S172.16.10.16\\engel_mdm",
+        "--db-user": "Администратор",
+        "--db-pwd": "",
+        "--ordinaryapp": "0",
+        "--v8version": "8.3.10"
+    },
+    "vanessa": {
+        "--vanessasettings": "./tools/VBParamsFirst.json",
+        "--workspace": ".",
+        "--pathvanessa": "./tools/vanessa-behavior/vanessa-behavior.epf",
+        "--additional": "/DisplayAllFunctions /L ru"
+    }
+}
