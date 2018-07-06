@@ -3,8 +3,8 @@
     "ЗавершитьРаботуСистемы": true,
     "ЗакрытьTestClientПослеЗапускаСценариев": true,
     "КаталогФич": "$workspaceRoot/features",
-	"КаталогИнструментов": "$workspaceRoot/tools/vanessa-behavior",
-	"КаталогПроекта": "$workspaceRoot/",
+	"КаталогИнструментов": "$workspaceRoot/./tools/vanessa-behavior",
+	"КаталогПроекта": "$workspaceRoot/./",
     "КаталогиБиблиотек": [
         "./features/Libraries",
         "$workspaceRoot/features",
