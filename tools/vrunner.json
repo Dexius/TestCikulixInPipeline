@@ -1,6 +1,6 @@
 {
     "default": {
-        "--ibconnection": "/S172.16.10.16\\engel_mdm",
+        "--ibconnection": "/S192.168.252.15\\engel_mdm",
         "--db-user": "Администратор",
         "--db-pwd": "",
         "--ordinaryapp": "0"
