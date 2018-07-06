@@ -1,7 +1,6 @@
 {
     "ВыполнитьСценарии": true,
     "ЗавершитьРаботуСистемы": true,
-    "ВыводитьСообщенияВФайл": "$workspaceRoot/build/out/vb.log",
     "ЗакрытьTestClientПослеЗапускаСценариев": true,
     "КаталогФич": "$workspaceRoot/features",
     "КаталогиБиблиотек": [
@@ -16,17 +15,10 @@
 	],
     "ДелатьОтчетВФорматеАллюр": true,
     "КаталогOutputAllureБазовый": "$workspaceRoot/build/out/allure",
-    "ВРЕМЕННО_ОТКЛЮЧЕН_ДелатьОтчетВФорматеCucumberJson": true,
-    "ВРЕМЕННО_ОТКЛЮЧЕН_КаталогOutputCucumberJson": "$workspaceRoot/build/out/cucumber",
+    "ДелатьОтчетВФорматеCucumberJson": true,
+    "КаталогOutputCucumberJson": "$workspaceRoot/build/out/cucumber",
     "ВыгружатьСтатусВыполненияСценариевВФайл": true,
-    "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "$workspaceRoot/build/out/buildStatus.log",
+    "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "$workspaceRoot/build/out/vbStatus.log",
     "ДелатьЛогВыполненияСценариевВТекстовыйФайл": true,
-    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/build/out/vbOnline.log",
-    "ДелатьОтчетВФорматеjUnit": true,
-    "КаталогOutputjUnit": "$workspaceRoot/build/out/bdd-junitreport",
-    "ДелатьСкриншотПриВозникновенииОшибки": false,
-    "СниматьСкриншотКаждогоОкна1С": false,
-    "КаталогOutputСкриншоты": "$workspaceRoot/build/out/ScreenShots",
-    "КомандаСделатьСкриншот": "nircmd savescreenshot ",
-    "ВРЕМЕННО_ОТКЛЮЧЕН_КомандаСделатьСкриншот": '"C:\Program Files (x86)\IrfanView\i_view32.exe" /capture=1 /convert='
+    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/build/out/vbOnline.log"
 }
