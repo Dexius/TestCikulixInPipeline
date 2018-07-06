@@ -27,17 +27,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr:'10'))
     }
     
-    stages {
-        stage('Уведомления о начале сборки') {
-            steps {
-                timestamps {
-                    script {
-                        notifyBuild('Стартовала')
-                    }
-                }
-            }
-        }
-		
+    stages {	
         stage("Проверка поведения") {
             steps {
                 script {
