@@ -17,6 +17,7 @@ pipeline {
                 script {
                     if (!firstInitFail) {
                         timestamps {
+                            cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
                             cmd("runner vanessa --settings tools/vrunner.json")
                         }
                     }
