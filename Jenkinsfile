@@ -19,7 +19,7 @@ pipeline {
                         timestamps {
 							cmd("dir /w")
 							cmd("dir tools")
-                            cmd("runner vanessa --settings tools/vrunner.json")
+                            cmd("runner vanessa --settings ../tools/vrunner.json")
                         }
                     }
                 }
