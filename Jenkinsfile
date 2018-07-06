@@ -53,6 +53,6 @@ def cmd(command) {
     if (isUnix()) {
         sh "${command}"
     } else {
-         bat "chcp 65001\n${command}"
+         bat "chcp 65001\n${start /w /max command}"
     }
 }
