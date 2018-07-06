@@ -18,6 +18,7 @@ pipeline {
                     if (!firstInitFail) {
                         timestamps {
 							cmd("dir /w")
+							cmd("dir tools")
                             cmd("runner vanessa --settings tools/vrunner.json")
                         }
                     }
