@@ -20,7 +20,7 @@ pipeline {
                     },
                     "Активация окна когда есть кеш" : {
                         PowerShell('Start-Sleep 10; Add-Type -AssemblyName Microsoft.VisualBasic ;$process  = Get-Process 1cv8* | select -skip 1 -last 1 ;[Microsoft.VisualBasic.Interaction]::AppActivate($process.id)')
-                    }
+                    },
                     "Активация окна когда нет кеша" : {
                         PowerShell('Start-Sleep 60; Add-Type -AssemblyName Microsoft.VisualBasic ;$process  = Get-Process 1cv8* | select -skip 1 -last 1 ;[Microsoft.VisualBasic.Interaction]::AppActivate($process.id)')
                     }
