@@ -32,15 +32,17 @@ pipeline {
         //     }	
         // }
 
-        steps {
-            parallel (
-                "Раз" : {
-                    PowerShell('Start-Sleep 5') 
-                },
-                "Два" : {
-                    PowerShell('Start-Sleep 5') 
-                }
-            )
+        stage("Проверка поведения") {
+            steps {
+                parallel (
+                    "Раз" : {
+                        PowerShell('Start-Sleep 5') 
+                    },
+                    "Два" : {
+                        PowerShell('Start-Sleep 5') 
+                    }
+                )
+            }
         }
 	
 		// parallel {
