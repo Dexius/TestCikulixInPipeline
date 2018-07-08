@@ -30,10 +30,8 @@ pipeline {
 				steps {
 					if (!firstInitFail) {
 						timestamps {
-							powershell(Start-Sleep 5)
-							def msg = powershell(returnStdout: true, script: 'echo "Тест выполнен!"')
-							println msg                     
-							}
+							powerShell('Write-Output "Hello World!"')                   
+						}
 					}
 				}
 			}
