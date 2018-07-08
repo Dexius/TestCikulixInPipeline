@@ -12,23 +12,25 @@ pipeline {
     }
     
     stages {
-        parallel {
-            stage("Unit Tests") {
-                steps {
-                    PowerShell('echo "Test"')
+        stage("Testing") {
+            parallel {
+                stage("Unit Tests") {
+                    steps {
+                        PowerShell('echo "Test"')
+                    }
                 }
-            }
-            stage("Functional Tests") {
-                steps {
-                    PowerShell('echo "Test"')
+                stage("Functional Tests") {
+                    steps {
+                        PowerShell('echo "Test"')
+                    }
                 }
-            }
-            stage("Integration Tests") {
-                steps {
-                    PowerShell('echo "Test"')
+                stage("Integration Tests") {
+                    steps {
+                        PowerShell('echo "Test"')
+                    }
                 }
-            }
-        }	
+            }	
+        }
 	
 		// parallel {
 		// 	stage("Проверка поведения") {
