@@ -41,11 +41,7 @@ pipeline {
                     },
                     "Два" : {
                         PowerShell('Start-Sleep 10') 
-                        PowerShell("
-                        Add-Type -AssemblyName Microsoft.VisualBasic
-                        $process  = Get-Process 1cv8* | Select -Last 1
-                        [Microsoft.VisualBasic.Interaction]::AppActivate($process.id)
-                        ")
+                        PowerShell('Add-Type -AssemblyName Microsoft.VisualBasic ;$process  = Get-Process 1cv8* | Select -Last 1 ;[Microsoft.VisualBasic.Interaction]::AppActivate($process.id)')
                     }
                 )
             }
