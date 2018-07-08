@@ -28,14 +28,12 @@ pipeline {
 			},
 			stage("Активируем окно 1С") {
 				steps {
-					script {
-						if (!firstInitFail) {
-							timestamps {
-								powershell(Start-Sleep -Seconds 5)
-								def msg = powershell(returnStdout: true, script: 'echo "Тест выполнен!"')
-								println msg                     
-								}
-						}
+					if (!firstInitFail) {
+						timestamps {
+							powershell(Start-Sleep 5)
+							def msg = powershell(returnStdout: true, script: 'echo "Тест выполнен!"')
+							println msg                     
+							}
 					}
 				}
 			}
