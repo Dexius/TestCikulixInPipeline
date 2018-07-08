@@ -37,9 +37,11 @@ pipeline {
                 parallel (
                     "Раз" : {
                         cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
+                        cmd("runner vanessa --settings tools/vrunner.json")
                     },
                     "Два" : {
                         PowerShell('Start-Sleep 5') 
+                        PowerShell(". '.\\tools\\ActivateWindow.ps1'")
                     }
                 )
             }
@@ -99,7 +101,7 @@ def cmd(command) {
     if (isUnix()) {
         sh "${command}"
     } else {
-         bat "chcp 65001\n$start /w /max {command}"
+         bat "chcp 65001\n$ {command}"
     }
 }
 
