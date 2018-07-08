@@ -11,33 +11,50 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr:'10'))
     }
     
-    stages {	
+    stages {
+        parallel {
+            stage("Unit Tests") {
+                steps {
+                    PowerShell('echo "Test"')
+                }
+            }
+            stage("Functional Tests") {
+                steps {
+                    PowerShell('echo "Test"')
+                }
+            }
+            stage("Integration Tests") {
+                steps {
+                    PowerShell('echo "Test"')
+                }
+            }
+        }	
 	
-		parallel {
-			stage("Проверка поведения") {
-				steps {
-					script {
-						if (!firstInitFail) {
-							timestamps {
-								cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
-								cmd("runner vanessa --settings tools/vrunner.json")
-							}
-						}
-					}
-				}
-			}
-			stage("Активируем окно 1С") {
-				steps {
-					script {
-						if (!firstInitFail) {
-							timestamps {
-								PowerShell('echo "Test"')                   
-							}
-						}
-					}
-				}
-			}
-		}		
+		// parallel {
+		// 	stage("Проверка поведения") {
+		// 		steps {
+		// 			script {
+		// 				if (!firstInitFail) {
+		// 					timestamps {
+		// 						cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
+		// 						cmd("runner vanessa --settings tools/vrunner.json")
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// 	stage("Активируем окно 1С") {
+		// 		steps {
+		// 			script {
+		// 				if (!firstInitFail) {
+		// 					timestamps {
+		// 						PowerShell('echo "Test"')                   
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }		
     }   
     post {
         always {                
