@@ -40,8 +40,12 @@ pipeline {
                         // cmd("runner vanessa --settings tools/vrunner.json")
                     },
                     "Два" : {
-                        PowerShell('Start-Sleep 5') 
-                        PowerShell("./tools/ActivateWindow.ps1")
+                        PowerShell('Start-Sleep 10') 
+                        PowerShell('
+                        Add-Type -AssemblyName Microsoft.VisualBasic
+                        $process  = Get-Process 1cv8* | Select -Last 1
+                        [Microsoft.VisualBasic.Interaction]::AppActivate($process.id)
+                        ')
                     }
                 )
             }
