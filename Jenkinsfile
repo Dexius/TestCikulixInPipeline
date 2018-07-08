@@ -37,11 +37,11 @@ pipeline {
                 parallel (
                     "Раз" : {
                         cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
-                        cmd("runner vanessa --settings tools/vrunner.json")
+                        // cmd("runner vanessa --settings tools/vrunner.json")
                     },
                     "Два" : {
                         PowerShell('Start-Sleep 5') 
-                        PowerShell(". '.\\tools\\ActivateWindow.ps1'")
+                        PowerShell("./tools/ActivateWindow.ps1")
                     }
                 )
             }
