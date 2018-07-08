@@ -12,18 +12,34 @@ pipeline {
     }
     
     stages {	
-        stage("Проверка поведения") {
-            steps {
-                script {
-                    if (!firstInitFail) {
-                        timestamps {
-                            cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
-                            cmd("runner vanessa --settings tools/vrunner.json")
-                        }
-                    }
-                }
-            }
-        }     
+	
+		parallel(
+			stage("Проверка поведения") {
+				steps {
+					script {
+						if (!firstInitFail) {
+							timestamps {
+								cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
+								cmd("runner vanessa --settings tools/vrunner.json")
+							}
+						}
+					}
+				}
+			},
+			stage("Активируем окно 1С") {
+				steps {
+					script {
+						if (!firstInitFail) {
+							timestamps {
+								powershell(Start-Sleep -Seconds 5)
+								def msg = powershell(returnStdout: true, script: 'echo "Тест выполнен!"')
+								println msg                     
+								}
+						}
+					}
+				}
+			}
+		)		
     }   
     post {
         always {                
