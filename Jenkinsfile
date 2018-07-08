@@ -15,11 +15,11 @@ pipeline {
         stage("Проверка поведения") {
             steps {
                 parallel (
-                    "Раз" : {
+                    "Запуск runner" : {
                         cmd("runner vanessa --settings tools/vrunner.json")
                     },
-                    "Два" : {
-                        PowerShell('Start-Sleep 20; Add-Type -AssemblyName Microsoft.VisualBasic ;$process  = Get-Process 1cv8* | Select -Last 1 ;[Microsoft.VisualBasic.Interaction]::AppActivate($process.id)')
+                    "Активация окна" : {
+                        PowerShell('Start-Sleep 30; Add-Type -AssemblyName Microsoft.VisualBasic ;$process  = Get-Process 1cv8* | Select -Last 1 ;[Microsoft.VisualBasic.Interaction]::AppActivate($process.id)')
                     }
                 )
             }
