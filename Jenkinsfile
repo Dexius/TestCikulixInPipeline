@@ -36,7 +36,7 @@ pipeline {
             steps {
                 parallel (
                     "Раз" : {
-                        cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
+                        // cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
                         cmd("runner vanessa --settings tools/vrunner.json")
                     },
                     "Два" : {
