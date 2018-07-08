@@ -13,7 +13,7 @@
 		"Draft",
 		"FirstStart"
     ],
-    "ВыполнятьШагиАссинхронно": false,
+    "ВыполнятьШагиАссинхронно": true,
     "ДелатьОтчетВФорматеАллюр": true,
     "КаталогOutputAllureБазовый": "$workspaceRoot/build/out/allure",
     "ДелатьОтчетВФорматеCucumberJson": true,
