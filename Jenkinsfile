@@ -14,16 +14,16 @@ pipeline {
     stages {
         stage("Проверка поведения") {
             parallel {
-                stage("Запуск vrunner") {
-                    steps {
-                        script {
-							timestamps {
-								cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
-								// cmd("runner vanessa --settings tools/vrunner.json")
-							}
-                        }
-                    }
-                }
+                // stage("Запуск vrunner") {
+                //     steps {
+                //         script {
+				// 			timestamps {
+				// 				cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
+				// 				// cmd("runner vanessa --settings tools/vrunner.json")
+				// 			}
+                //         }
+                //     }
+                // }
                 stage("Functional Tests") {
                     steps {
                         timestamps {
