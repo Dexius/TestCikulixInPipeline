@@ -28,9 +28,11 @@ pipeline {
 			},
 			stage("Активируем окно 1С") {
 				steps {
-					if (!firstInitFail) {
-						timestamps {
-							powerShell('Write-Output "Hello World!"')                   
+					script {
+						if (!firstInitFail) {
+							timestamps {
+								PowerShell('echo "Test"')                   
+							}
 						}
 					}
 				}
@@ -67,4 +69,9 @@ def cmd(command) {
     } else {
          bat "chcp 65001\n$start /w /max {command}"
     }
+}
+
+def PowerShell(psCmd) {
+    psCmd=psCmd.replaceAll("%", "%%")
+    bat "powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command \"\$ErrorActionPreference='Stop';[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$psCmd;EXIT \$global:LastExitCode\""
 }
