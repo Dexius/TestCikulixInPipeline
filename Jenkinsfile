@@ -12,24 +12,35 @@ pipeline {
     }
     
     stages {
-        stage("Проверка поведения") {
-            parallel {
-                stage("Запуск vrunner") {
-                    steps {
-                        timestamps {
-                            // cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
-                            cmd("runner vanessa --settings tools/vrunner.json")
-                        }
-                    }
+        // stage("Проверка поведения") {
+        //     parallel {
+        //         stage("Запуск vrunner") {
+        //             steps {
+        //                 timestamps {
+        //                     // cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
+        //                     cmd("runner vanessa --settings tools/vrunner.json")
+        //                 }
+        //             }
+        //         }
+        //         stage("Functional Tests") {
+        //             steps {
+        //                 timestamps {
+        //                     PowerShell('Start-Sleep 5')  
+        //                 }                 
+        //             }
+        //         }
+        //     }	
+        // }
+
+        steps {
+            parallel (
+                "Раз" : {
+                    PowerShell('Start-Sleep 5') 
+                },
+                "Два" : {
+                    PowerShell('Start-Sleep 5') 
                 }
-                stage("Functional Tests") {
-                    steps {
-                        timestamps {
-                            PowerShell('Start-Sleep 5')  
-                        }                 
-                    }
-                }
-            }	
+            )
         }
 	
 		// parallel {
