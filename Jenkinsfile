@@ -61,23 +61,23 @@ pipeline {
     post {
         always {                
 
-            allure includeProperties: false, jdk: '', results: [[path: 'build/out/allure']]
+            // allure includeProperties: false, jdk: '', results: [[path: 'build/out/allure']]
 
-            publishHTML target: [
-                allowMissing: false, 
-                alwaysLinkToLastBuild: false, 
-                keepAll: false, 
-                reportDir: 'build/out', 
-                // reportFiles: 'allure-report/index.html,pickles/Index.html', 
-                reportFiles: 'allure-report/index.html',                 
-                reportName: 'HTML Report', 
-                reportTitles: ''
-                ]
+            // publishHTML target: [
+            //     allowMissing: false, 
+            //     alwaysLinkToLastBuild: false, 
+            //     keepAll: false, 
+            //     reportDir: 'build/out', 
+            //     // reportFiles: 'allure-report/index.html,pickles/Index.html', 
+            //     reportFiles: 'allure-report/index.html',                 
+            //     reportName: 'HTML Report', 
+            //     reportTitles: ''
+            //     ]
 
-            script{
-                if (firstInitFail)
-                    currentBuild.result = 'FAILURE'
-            }
+            // script{
+            //     if (firstInitFail)
+            //         currentBuild.result = 'FAILURE'
+            // }
         }
     }
 }
