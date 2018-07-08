@@ -13,7 +13,7 @@ pipeline {
     
     stages {	
 	
-		parallel(
+		parallel {
 			stage("Проверка поведения") {
 				steps {
 					script {
@@ -37,7 +37,7 @@ pipeline {
 					}
 				}
 			}
-		)		
+		}		
     }   
     post {
         always {                
