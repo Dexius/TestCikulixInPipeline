@@ -98,11 +98,12 @@ pipeline {
 }
 
 def cmd(command) {
-    if (isUnix()) {
-        sh "${command}"
-    } else {
-         bat "chcp 65001\n$ ${command}"
-    }
+    // при запуске Jenkins не в режиме UTF-8 нужно написать chcp 1251 вместо chcp 65001
+    if (isUnix()) { sh "${command}" } else { bat "chcp 65001\n${command}"}
+}
+def cmd_failsafe(command) {
+    // при запуске Jenkins не в режиме UTF-8 нужно написать chcp 1251 вместо chcp 65001
+    if (isUnix()) { sh "${command}" } else { bat (script: "chcp 65001\n${command}",  returnStatus: true)}
 }
 
 def PowerShell(psCmd) {
