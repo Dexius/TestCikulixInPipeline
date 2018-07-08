@@ -77,7 +77,7 @@ pipeline {
             // script{
             //     if (firstInitFail)
             //         currentBuild.result = 'FAILURE'
-            // }
+            }
         }
     }
 }
