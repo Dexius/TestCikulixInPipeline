@@ -12,7 +12,8 @@
 		"IgnoreOnCIMainBuild",
 		"Draft",
 		"FirstStart"
-	],
+    ],
+    "ВыполнятьШагиАссинхронно": false,
     "ДелатьОтчетВФорматеАллюр": true,
     "КаталогOutputAllureБазовый": "$workspaceRoot/build/out/allure",
     "ДелатьОтчетВФорматеCucumberJson": true,
