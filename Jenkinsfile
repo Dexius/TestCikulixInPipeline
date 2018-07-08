@@ -25,7 +25,7 @@ pipeline {
 						}
 					}
 				}
-			},
+			}
 			stage("Активируем окно 1С") {
 				steps {
 					script {
