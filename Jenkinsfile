@@ -12,21 +12,21 @@ pipeline {
     }
     
     stages {
-        stage("Testing") {
+        stage("Проверка поведения") {
             parallel {
-                stage("Unit Tests") {
+                stage("Запуск vrunner") {
                     steps {
-                        PowerShell('echo "Test"')
+							timestamps {
+								cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
+								// cmd("runner vanessa --settings tools/vrunner.json")
+							}
                     }
                 }
                 stage("Functional Tests") {
                     steps {
-                        PowerShell('echo "Test"')
-                    }
-                }
-                stage("Integration Tests") {
-                    steps {
-                        PowerShell('echo "Test"')
+                        timestamps {
+                            PowerShell('Start-Sleep 5')  
+                        }                 
                     }
                 }
             }	
