@@ -59,7 +59,7 @@ pipeline {
 		// }		
     }   
     post {
-        always {                
+        // always {                
 
             // allure includeProperties: false, jdk: '', results: [[path: 'build/out/allure']]
 
@@ -77,8 +77,8 @@ pipeline {
             // script{
             //     if (firstInitFail)
             //         currentBuild.result = 'FAILURE'
-            }
-        }
+            // }
+        // }
     }
 }
 
