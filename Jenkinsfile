@@ -19,7 +19,7 @@ pipeline {
                         cmd("runner vanessa --settings tools/vrunner.json")
                     },
                     "Активация окна" : {
-                        PowerShell('Start-Sleep 30; Add-Type -AssemblyName Microsoft.VisualBasic ;$process  = Get-Process 1cv8* | Select -Last 1 ;[Microsoft.VisualBasic.Interaction]::AppActivate($process.id)')
+                        PowerShell('Start-Sleep 30; Add-Type -AssemblyName Microsoft.VisualBasic ;$process  = Get-Process 1cv8* | select -skip 1 -last 1 ;[Microsoft.VisualBasic.Interaction]::AppActivate($process.id)')
                     }
                 )
             }
