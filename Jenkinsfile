@@ -58,7 +58,7 @@ pipeline {
 		// 	}
 		// }		
     }   
-    post {
+    // post {
         // always {                
 
             // allure includeProperties: false, jdk: '', results: [[path: 'build/out/allure']]
@@ -79,7 +79,7 @@ pipeline {
             //         currentBuild.result = 'FAILURE'
             // }
         // }
-    }
+    // }
 }
 
 def cmd(command) {
