@@ -18,19 +18,19 @@ pipeline {
                     steps {
                         script {
 							timestamps {
-								cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
+								// cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
 								cmd("runner vanessa --settings tools/vrunner.json")
 							}
                         }
                     }
                 }
-                stage("Functional Tests") {
-                    steps {
-                        timestamps {
-                            PowerShell('Start-Sleep 5')  
-                        }                 
-                    }
-                }
+                // stage("Functional Tests") {
+                //     steps {
+                //         timestamps {
+                //             PowerShell('Start-Sleep 5')  
+                //         }                 
+                //     }
+                // }
             }	
         }
 	
