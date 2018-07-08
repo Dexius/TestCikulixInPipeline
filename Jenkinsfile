@@ -12,88 +12,19 @@ pipeline {
     }
     
     stages {
-        // stage("Проверка поведения") {
-        //     parallel {
-        //         stage("Запуск vrunner") {
-        //             steps {
-        //                 timestamps {
-        //                     // cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
-        //                     cmd("runner vanessa --settings tools/vrunner.json")
-        //                 }
-        //             }
-        //         }
-        //         stage("Functional Tests") {
-        //             steps {
-        //                 timestamps {
-        //                     PowerShell('Start-Sleep 5')  
-        //                 }                 
-        //             }
-        //         }
-        //     }	
-        // }
-
         stage("Проверка поведения") {
             steps {
                 parallel (
                     "Раз" : {
-                        // cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
                         cmd("runner vanessa --settings tools/vrunner.json")
                     },
                     "Два" : {
-                        PowerShell('Start-Sleep 30; Add-Type -AssemblyName Microsoft.VisualBasic ;$process  = Get-Process 1cv8* | Select -Last 1 ;[Microsoft.VisualBasic.Interaction]::AppActivate($process.id)')
+                        PowerShell('Start-Sleep 20; Add-Type -AssemblyName Microsoft.VisualBasic ;$process  = Get-Process 1cv8* | Select -Last 1 ;[Microsoft.VisualBasic.Interaction]::AppActivate($process.id)')
                     }
                 )
             }
         }
-	
-		// parallel {
-		// 	stage("Проверка поведения") {
-		// 		steps {
-		// 			script {
-		// 				if (!firstInitFail) {
-		// 					timestamps {
-		// 						cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
-		// 						cmd("runner vanessa --settings tools/vrunner.json")
-		// 					}
-		// 				}
-		// 			}
-		// 		}
-		// 	}
-		// 	stage("Активируем окно 1С") {
-		// 		steps {
-		// 			script {
-		// 				if (!firstInitFail) {
-		// 					timestamps {
-		// 						PowerShell('echo "Test"')                   
-		// 					}
-		// 				}
-		// 			}
-		// 		}
-		// 	}
-		// }		
-    }   
-    // post {
-        // always {                
-
-            // allure includeProperties: false, jdk: '', results: [[path: 'build/out/allure']]
-
-            // publishHTML target: [
-            //     allowMissing: false, 
-            //     alwaysLinkToLastBuild: false, 
-            //     keepAll: false, 
-            //     reportDir: 'build/out', 
-            //     // reportFiles: 'allure-report/index.html,pickles/Index.html', 
-            //     reportFiles: 'allure-report/index.html',                 
-            //     reportName: 'HTML Report', 
-            //     reportTitles: ''
-            //     ]
-
-            // script{
-            //     if (firstInitFail)
-            //         currentBuild.result = 'FAILURE'
-            // }
-        // }
-    // }
+    }
 }
 
 def cmd(command) {
