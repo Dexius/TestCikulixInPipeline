@@ -36,7 +36,7 @@ pipeline {
             steps {
                 parallel (
                     "Раз" : {
-                        PowerShell('Start-Sleep 5') 
+                        cmd("set LOGOS_CONFIG=logger.rootLogger=DEBUG")
                     },
                     "Два" : {
                         PowerShell('Start-Sleep 5') 
